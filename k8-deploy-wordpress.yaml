@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend
+  name: wordpress
   annotations:
     cloud.google.com/load-balancer-type: "Internal"
   labels:
@@ -22,7 +22,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: frontend
+  name: wordpress
 spec:
   replicas: 3
   template:
@@ -32,7 +32,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - name: front-wordpress
+      - name: wordpress
         image: tutum/wordpress
         resources:
           requests:
