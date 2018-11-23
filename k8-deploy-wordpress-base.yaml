@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: wordpress
-        image: bitnami/wordpress
+        image: wodby/wordpress-nginx
         resources:
           requests:
             cpu: 100m
