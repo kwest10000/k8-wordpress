@@ -1,23 +1,4 @@
 
-apiVersion: v1
-kind: Service
-metadata:
-  name: www-wordpress-service
-  annotations:
-    cloud.google.com/load-balancer-type: "Internal"
-  labels:
-    app: www-wordpress
-    tier: frontend
-spec:
-  # if your cluster supports it, uncomment the following to automatically create
-  # an external load-balanced IP for the frontend service.
-  type: LoadBalancer
-  ports:
-  - port: 80
-  selector:
-    app: www-wordpress
-    tier: frontend
----
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
