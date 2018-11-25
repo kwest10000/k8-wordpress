@@ -9,7 +9,7 @@ metadata:
   labels:
     app: www-wordpress
   name: www-wordpress
-  namespace: www-wp-ns
+  #namespace: www-wp-ns
   resourceVersion: "12962"
   selfLink: /apis/extensions/v1beta1/namespaces/www-wp-ns/deployments/www-wordpress
   uid: bcab5fcc-f05f-11e8-b14c-42010a8a00b6
