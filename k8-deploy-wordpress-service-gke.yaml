@@ -5,6 +5,8 @@ metadata:
   labels:
     app: www-wordpress
   name: www-wordpress-service
+  annotations:
+    cloud.google.com/load-balancer-type: "Internal"
   namespace: www-wp-ns
   resourceVersion: "17121"
   selfLink: /api/v1/namespaces/www-wp-ns/services/www-wordpress-service
