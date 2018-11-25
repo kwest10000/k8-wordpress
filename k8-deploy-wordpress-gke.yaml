@@ -14,7 +14,7 @@ spec:
   ports:
   - port: 80
   selector:
-    app: wordpress-east
+    app: wordpress
     tier: frontend
 ---
 apiVersion: extensions/v1beta1
