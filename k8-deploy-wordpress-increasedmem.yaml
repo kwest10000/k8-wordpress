@@ -36,8 +36,8 @@ spec:
         image: tutum/wordpress
         resources:
           requests:
-            cpu: 100m
-            memory: 1000Mi
+            cpu: 10m
+            memory: 10Mi
         env:
         - name: GET_HOSTS_FROM
           value: dns
