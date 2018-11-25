@@ -12,13 +12,21 @@ metadata:
   selfLink: /api/v1/namespaces/www-wp-ns/services/www-wordpress-service
   uid: 296867b9-f060-11e8-b14c-42010a8a00b6
 spec:
+  clusterIP: 10.31.254.154
+  externalTrafficPolicy: Cluster
   ports:
+  - nodePort: 31616
     port: 80
+    protocol: TCP
+    targetPort: 80
   selector:
     app: www-wordpress
   sessionAffinity: None
   type: LoadBalancer
-
+status:
+  loadBalancer:
+    ingress:
+    - ip: 35.230.31.104
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
