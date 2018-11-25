@@ -12,8 +12,6 @@ metadata:
   selfLink: /api/v1/namespaces/www-wp-ns/services/www-wordpress-service
   uid: 203d9078-f064-11e8-b14c-42010a8a00b6
 spec:
-  clusterIP: 10.31.251.21
-  externalTrafficPolicy: Cluster
   ports:
   - nodePort: 31391
     port: 80
