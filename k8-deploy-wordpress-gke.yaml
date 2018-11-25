@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: wpns
+  name: wordpress
   annotations:
     cloud.google.com/load-balancer-type: "Internal"
   labels:
@@ -28,7 +28,7 @@ metadata:
   labels:
     app: wordpress
   name: wordpress
-  namespace: wpns
+  namespace: wordpress
   resourceVersion: "2007"
   selfLink: /apis/extensions/v1beta1/namespaces/wpns/deployments/wordpress
   uid: fd36bfaf-f053-11e8-b14c-42010a8a00b6
