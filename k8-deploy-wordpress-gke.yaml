@@ -27,7 +27,7 @@ metadata:
   generation: 1
   labels:
     app: wordpress
-  name: wordpress
+  name: wpname
   namespace: wpname
   resourceVersion: "2007"
   selfLink: /apis/extensions/v1beta1/namespaces/wpns/deployments/wordpress
