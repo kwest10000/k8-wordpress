@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: wordpress
+  name: wpname
   annotations:
     cloud.google.com/load-balancer-type: "Internal"
   labels:
