@@ -1,25 +1,24 @@
-
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
-  creationTimestamp: 2018-11-25T02:50:43Z
+  creationTimestamp: 2018-11-25T03:11:01Z
   generation: 1
   labels:
-    app: wordpress
-  name: wordpress
-  namespace: default
-  resourceVersion: "10391"
-  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/wordpress
-  uid: e6eb7cff-f05c-11e8-b14c-42010a8a00b6
+    app: www-wordpress
+  name: www-wordpress
+  namespace: www-wp-ns
+  resourceVersion: "12962"
+  selfLink: /apis/extensions/v1beta1/namespaces/www-wp-ns/deployments/www-wordpress
+  uid: bcab5fcc-f05f-11e8-b14c-42010a8a00b6
 spec:
   progressDeadlineSeconds: 600
   replicas: 3
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: wordpress
+      app: www-wordpress
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -29,7 +28,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: wordpress
+        app: www-wordpress
     spec:
       containers:
       - image: tutum/wordpress
@@ -46,15 +45,15 @@ spec:
 status:
   availableReplicas: 3
   conditions:
-  - lastTransitionTime: 2018-11-25T02:50:46Z
-    lastUpdateTime: 2018-11-25T02:50:46Z
+  - lastTransitionTime: 2018-11-25T03:11:04Z
+    lastUpdateTime: 2018-11-25T03:11:04Z
     message: Deployment has minimum availability.
     reason: MinimumReplicasAvailable
     status: "True"
     type: Available
-  - lastTransitionTime: 2018-11-25T02:50:43Z
-    lastUpdateTime: 2018-11-25T02:50:47Z
-    message: ReplicaSet "wordpress-575b56c459" has successfully progressed.
+  - lastTransitionTime: 2018-11-25T03:11:01Z
+    lastUpdateTime: 2018-11-25T03:11:06Z
+    message: ReplicaSet "www-wordpress-6496f4f89c" has successfully progressed.
     reason: NewReplicaSetAvailable
     status: "True"
     type: Progressing
