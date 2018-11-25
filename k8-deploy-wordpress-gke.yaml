@@ -1,37 +1,36 @@
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: wpname
-  annotations:
-    cloud.google.com/load-balancer-type: "Internal"
   labels:
     app: wordpress
-    tier: frontend
+  name: wordpress-service
+  annotations:
+    cloud.google.com/load-balancer-type: "Internal"
+  namespace: default
 spec:
-  # if your cluster supports it, uncomment the following to automatically create
-  # an external load-balanced IP for the frontend service.
-  type: LoadBalancer
   ports:
-  - port: 80
+    protocol: TCP
+    targetPort: 80
   selector:
     app: wordpress
-    tier: frontend
+  sessionAffinity: None
+  type: LoadBalancer
+
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
-  creationTimestamp: 2018-11-25T01:46:55Z
+  creationTimestamp: 2018-11-25T02:50:43Z
   generation: 1
   labels:
     app: wordpress
-  name: wpname
-  namespace: wpname
-  resourceVersion: "2007"
-  selfLink: /apis/extensions/v1beta1/namespaces/wpns/deployments/wordpress
-  uid: fd36bfaf-f053-11e8-b14c-42010a8a00b6
+  name: wordpress
+  namespace: default
+  resourceVersion: "10391"
+  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/wordpress
+  uid: e6eb7cff-f05c-11e8-b14c-42010a8a00b6
 spec:
   progressDeadlineSeconds: 600
   replicas: 3
@@ -65,14 +64,14 @@ spec:
 status:
   availableReplicas: 3
   conditions:
-  - lastTransitionTime: 2018-11-25T01:47:22Z
-    lastUpdateTime: 2018-11-25T01:47:22Z
+  - lastTransitionTime: 2018-11-25T02:50:46Z
+    lastUpdateTime: 2018-11-25T02:50:46Z
     message: Deployment has minimum availability.
     reason: MinimumReplicasAvailable
     status: "True"
     type: Available
-  - lastTransitionTime: 2018-11-25T01:46:55Z
-    lastUpdateTime: 2018-11-25T01:47:23Z
+  - lastTransitionTime: 2018-11-25T02:50:43Z
+    lastUpdateTime: 2018-11-25T02:50:47Z
     message: ReplicaSet "wordpress-575b56c459" has successfully progressed.
     reason: NewReplicaSetAvailable
     status: "True"
