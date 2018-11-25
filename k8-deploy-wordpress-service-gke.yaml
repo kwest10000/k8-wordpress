@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2018-11-25T03:42:26Z
+  labels:
+    app: www-wordpress
+  name: www-wordpress-service
+  namespace: www-wp-ns
+  resourceVersion: "17121"
+  selfLink: /api/v1/namespaces/www-wp-ns/services/www-wordpress-service
+  uid: 203d9078-f064-11e8-b14c-42010a8a00b6
+spec:
+  clusterIP: 10.31.251.21
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 31391
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: www-wordpress
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 35.230.31.104
