@@ -9,7 +9,6 @@ metadata:
   labels:
     app: www-wordpress
   name: www-wordpress
-  namespace: www-wp-ns
 spec:
   progressDeadlineSeconds: 600
   replicas: 3
