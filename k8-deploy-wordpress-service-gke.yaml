@@ -21,7 +21,4 @@ spec:
     app: www-wordpress
   sessionAffinity: None
   type: LoadBalancer
-status:
-  loadBalancer:
-    ingress:
-    - ip: 35.230.31.104
+
